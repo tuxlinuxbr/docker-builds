@@ -1,6 +1,8 @@
 FROM docker.io/bertrandmartel/httpd-proxy
 COPY weblogic-plugins /usr/local/
 run echo "/usr/local/weblogic-plugins/lib" >> /etc/ld.so.conf.d/weblogic.conf \
+    && echo "LoadModule weblogic_module /usr/local/lib/mod_wl_24.so" > /etc/apache2/mods-enabled/wl.load \
+    && ldconfig \
     && mkdir /etc/apache2/ssl
 run a2enmod lbmethod_bybusyness \
     && a2enmod lbmethod_byrequests \
