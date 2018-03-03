@@ -1,0 +1,1 @@
+docker run --rm -it -v /home/renan.schiavo/Virtualizacao/Docker.Aux/BuildImages/ansiable/hosts/hosts:/etc/ansible/hosts -v /home/renan.schiavo/Virtualizacao/Docker.Aux/BuildImages/ansiable/key/ansible-rsa:/etc/ansible/ansible-rsa --name ansible-teste ansible/centos7-ansible:latest
